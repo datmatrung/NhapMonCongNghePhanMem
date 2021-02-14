@@ -4,7 +4,6 @@
 // 4- Số lượng ngoại ngữ, tên của các ngoại ngữ
 // 5- Ngày sinh, tuổi
 
-const { Console } = require("console")
 const FS = require("fs")
 var DuongDan = `C:\\Users\\ADMIN\\Desktop\\NV_01.json`
 var ChuoiJSON = FS.readFileSync(DuongDan)
