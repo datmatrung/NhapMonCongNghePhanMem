@@ -10,10 +10,10 @@ var ChuoiJSON = FS.readFileSync(DuongDan)
 var NhanVien = JSON.parse(ChuoiJSON)
 var ChuoiTXT = `${NhanVien.Ho_ten} ${NhanVien.Ma_so}`
 ChuoiTXT += `\n${NhanVien.Don_vi.Ten} ${NhanVien.Don_vi.Chi_nhanh.Ten}`
-if (Nhan_vien.Gioi_tinh == '0')
-    Chuoi_TXT+=`\nNam`
+if (NhanVien.Gioi_tinh == '0')
+    ChuoiTXT+=`\nNam`
 else
-    Chuoi_TXT+=`\nNữ`
+    ChuoiTXT+=`\nNữ`
 var SoNgoaiNgu = NhanVien.Danh_sach_Ngoai_ngu.length
 ChuoiTXT += `\nBiet ${SoNgoaiNgu} ngoai ngu: `
 NhanVien.Danh_sach_Ngoai_ngu.forEach(NgoaiNgu => {
