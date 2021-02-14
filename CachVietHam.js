@@ -1,6 +1,6 @@
 const FS = require("fs")
 function DocNhanVien(MaSo){
-    var DuongDan = `H:\\NMCNPM\\1988106-Nguyen_Hai_Trung-Bai_tap_2\\Du_lieu\\Nhan_vien\\${MaSo}.json`
+    var DuongDan = `C:\\Users\\ASUS\\Desktop\\Nhan_vien\\Nhan_vien\\${MaSo}.json`
     var ChuoiJSON = FS.readFileSync(DuongDan)
     var NhanVien = JSON.parse(ChuoiJSON)
     return NhanVien
