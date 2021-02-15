@@ -1,5 +1,5 @@
 const FS = require("fs")
-function DocDanhSachNhanVien(){
+DocDanhSachNhanVien=()=>{
     var DuongDanThuMuc = `C:\\Users\\ASUS\\Desktop\\Nhan_vien\\Nhan_vien`
     var DanhSachTenTapTin = FS.readdirSync(DuongDanThuMuc)
     var DanhSach = []
@@ -11,7 +11,7 @@ function DocDanhSachNhanVien(){
     })
     return DanhSach
 }
-function TaoChuoiTXTDanhSachNhanVien(DanhSach){
+TaoChuoiTXTDanhSachNhanVien=(DanhSach)=>{
     var ChuoiTXT = `Danh sach ${DanhSach.length} nhan vien\n`
     ChuoiTXT += DanhSach.map(x => x.Ho_ten).join("\n")
     return ChuoiTXT
