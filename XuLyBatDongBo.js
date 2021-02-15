@@ -21,7 +21,7 @@ TaoChuoiTXTNhanVien=(NhanVien)=>{
     ChuoiTXT += ` ${Tuoi} tuoi`
     return ChuoiTXT
 }
-var NhanVien = DocNhanVien("NV_21", (NhanVien)=>{
+DocNhanVien("NV_20", (NhanVien)=>{
     var ChuoiTXT = TaoChuoiTXTNhanVien(NhanVien)
     console.log(ChuoiTXT)
 })
