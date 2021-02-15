@@ -1,6 +1,6 @@
 const FS = require("fs")
 DocDanhSachNhanVien=()=>{
-    var DuongDanThuMuc = `C:\\Users\\ADMIN\\Desktop\\Nhan_vien\\Nhan_vien`
+    var DuongDanThuMuc = `C:\\Users\\ASUS\\Desktop\\Nhan_vien\\Nhan_vien`
     var DanhSachTenTapTin = FS.readdirSync(DuongDanThuMuc)
     var DanhSach = []
     DanhSachTenTapTin.forEach(ten => {
@@ -11,12 +11,12 @@ DocDanhSachNhanVien=()=>{
     })
     return DanhSach
 }
-TraCuuNhanVienTheoHoTen=(DanhSach, ChuoiTraCuu)=>{
+TraCuuTheoHoTen=(DanhSach, ChuoiTraCuu)=>{
     var DanhSachKq = []
     ChuoiTraCuu = ChuoiTraCuu.toUpperCase()
     DanhSach.forEach(NhanVien => {
-        var HoTen = NhanVien.Ho_ten.toUpperCase()
-        if (HoTen.includes(ChuoiTraCuu))
+        var TenNhanVien = NhanVien.Ho_ten.toUpperCase()
+        if(TenNhanVien.includes(ChuoiTraCuu))
             DanhSachKq.push(NhanVien)
     })
     return DanhSachKq
@@ -24,14 +24,14 @@ TraCuuNhanVienTheoHoTen=(DanhSach, ChuoiTraCuu)=>{
 TaoChuoiTXTDanhSachNhanVien=(DanhSach)=>{
     var ChuoiTXT = `Danh sach ${DanhSach.length} nhan vien\n`
     var ChiSo = 0
-    DanhSach.forEach(nv => {
+    DanhSach.forEach(NhanVien => {
         ChiSo++
-        ChuoiTXT += ChiSo + " " + nv.Ho_ten + "\n"
-    })    
+        ChuoiTXT += ChiSo + " " + NhanVien.Ho_ten + "\n"
+    })
     return ChuoiTXT
 }
 var DanhSach = DocDanhSachNhanVien()
-var ChuoiTraCuu='Bích'
-var DanhSachKq=TraCuuNhanVienTheoHoTen(DanhSach,ChuoiTraCuu)
-var ChuoiTXT=TaoChuoiTXTDanhSachNhanVien(DanhSachKq)
+var ChuoiTraCuu = "Anh"
+var DanhSachKq = TraCuuTheoHoTen(DanhSach, ChuoiTraCuu)
+var ChuoiTXT = TaoChuoiTXTDanhSachNhanVien(DanhSachKq)
 console.log(ChuoiTXT)
