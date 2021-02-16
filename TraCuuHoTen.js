@@ -11,7 +11,7 @@ DocDanhSachNhanVien=()=>{
     })
     return DanhSach
 }
-TraCuuTheoHoTen=(DanhSach, ChuoiTraCuu)=>{
+TraCuuNhanVienTheoHoTen=(DanhSach, ChuoiTraCuu)=>{
     var DanhSachKq = []
     ChuoiTraCuu = ChuoiTraCuu.toUpperCase()
     DanhSach.forEach(NhanVien => {
@@ -24,14 +24,15 @@ TraCuuTheoHoTen=(DanhSach, ChuoiTraCuu)=>{
 TaoChuoiTXTDanhSachNhanVien=(DanhSach)=>{
     var ChuoiTXT = `Danh sach ${DanhSach.length} nhan vien\n`
     var ChiSo = 0
-    DanhSach.forEach(NhanVien => {
+    DanhSach.forEach(nv => {
         ChiSo++
-        ChuoiTXT += ChiSo + " " + NhanVien.Ho_ten + "\n"
-    })
+        ChuoiTXT += ChiSo + " - " + nv.Ho_ten + " - " + nv.Don_vi.Ten + " - " + nv.Don_vi.Chi_nhanh.Ten
+        ChuoiTXT += " - " + nv.Danh_sach_Ngoai_ngu.map(x => x.Ten).join(" ") + "\n"
+    })    
     return ChuoiTXT
 }
 var DanhSach = DocDanhSachNhanVien()
-var ChuoiTraCuu = "Anh"
-var DanhSachKq = TraCuuTheoHoTen(DanhSach, ChuoiTraCuu)
-var ChuoiTXT = TaoChuoiTXTDanhSachNhanVien(DanhSachKq)
+var ChuoiTraCuu='Anh'
+var DanhSachKq=TraCuuNhanVienTheoHoTen(DanhSach,ChuoiTraCuu)
+var ChuoiTXT=TaoChuoiTXTDanhSachNhanVien(DanhSachKq)
 console.log(ChuoiTXT)
