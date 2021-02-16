@@ -1,6 +1,6 @@
 const FS = require("fs")
 DocDanhSachNhanVien=()=>{
-    var DuongDanThuMuc = `C:\\Users\\ADMIN\\Desktop\\Nhan_vien\\Nhan_vien`
+    var DuongDanThuMuc = `C:\\Users\\ASUS\\Desktop\\Nhan_vien\\Nhan_vien`
     var DanhSachTenTapTin = FS.readdirSync(DuongDanThuMuc)
     var DanhSach = []
     DanhSachTenTapTin.forEach(ten => {
@@ -25,12 +25,13 @@ TaoChuoiTXTDanhSachNhanVien=(DanhSach)=>{
     var ChiSo = 0
     DanhSach.forEach(nv => {
         ChiSo++
-        ChuoiTXT += ChiSo + " " + nv.Ho_ten + " " + nv.Don_vi.Chi_nhanh.Ten + "\n"
+        ChuoiTXT += ChiSo + " - " + nv.Ho_ten + " - " + nv.Don_vi.Ten + " - " + nv.Don_vi.Chi_nhanh.Ten
+        ChuoiTXT += " - " + nv.Danh_sach_Ngoai_ngu.map(x => x.Ten).join(" ") + "\n"
     })    
     return ChuoiTXT
 }
 var DanhSach = DocDanhSachNhanVien()
-var ChuoiTraCuu = 'Chi nhánh A'
-var DanhSachKq = TraCuuNhanVienTheoChiNhanh(DanhSach,ChuoiTraCuu)
-var ChuoiTXT = TaoChuoiTXTDanhSachNhanVien(DanhSachKq)
+var ChuoiTraCuu='Chi nhánh A'
+var DanhSachKq=TraCuuNhanVienTheoChiNhanh(DanhSach,ChuoiTraCuu)
+var ChuoiTXT=TaoChuoiTXTDanhSachNhanVien(DanhSachKq)
 console.log(ChuoiTXT)
