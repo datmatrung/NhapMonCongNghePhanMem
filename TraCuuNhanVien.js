@@ -18,8 +18,7 @@ XL_TraCuuNhanVien=(req,res)=>{
     res.send(ChuoiHTML)
 }
 
-var UngDung = Express()
-UngDung.use(Express.urlencoded())
-UngDung.listen(3000)
-UngDung.get("/", XL_KhoiDong)
-UngDung.get("/TraCuuNhanVien", XL_TraCuuNhanVien)
+Express().use(Express.urlencoded())
+Express().listen(3000)
+Express().get("/", XL_KhoiDong)
+Express().get("/TraCuuNhanVien", XL_TraCuuNhanVien)
