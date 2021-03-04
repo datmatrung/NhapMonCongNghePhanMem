@@ -1,0 +1,40 @@
+Hệ Thống Bảng Dữ Liệu:
+TIVI
+NHOM_TIVI
+NHAN_VIEN
+BAN_HANG
+NHAP_HANG
+PHAN_CONG
+
+Cách 0:
+TIVI(Ma_so,Ten,Don_gia_Ban,MNTV)
+NHOM_TIVI(Ma_so,Ten)
+NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau)
+BAN_HANG(Ma_so,Ngay,MTV,Don_gia,So_luong,Tien,)
+NHAP_HANG(Ma_so,Ngay,MTV,Don_gia,So_luong,Tien)
+PHAN_CONG(Ma_so,MNV,MNTV)
+
+Cách 1:
+TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten))
+NHOM_TIVI(Ma_so,Ten)
+NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau)
+BAN_HANG(Ma_so,Ngay,Tivi(Ma_so,Ten),Don_gia,So_luong,Tien)
+NHAP_HANG(Ma_so,Ngay,Tivi(Ma_so,Ten),Don_gia,So_luong,Tien)
+PHAN_CONG(Ma_so,Nhan_vien(Ma_so,Ten),Nhom_Tivi(Ma_so,Ten))
+
+Cách 2:
+TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten),
+	*Ban_hang(Ngay,Don_gia,So_luong,Tien),
+	*Nhap_hang(Ngay,Don_gia,So_luong,Tien))
+NHOM_TIVI(Ma_so,Ten)
+NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau),
+  *Nhom_Tivi(Ma_so,Ten))
+
+Cách 3:
+TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten),
+	*Ban_hang(Ngay,Don_gia,So_luong,Tien),
+	*Nhap_hang(Ngay,Don_gia,So_luong,Tien))
+CONGTY(Ma_so,Ten,
+	*Nhom_Tivi(Ma_so,Ten),
+	*Nhan_vien(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau),
+		*Nhom_Tivi(Ma_so,Ten)))
