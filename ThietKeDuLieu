@@ -28,7 +28,7 @@ TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten),
 	*Nhap_hang(Ngay,Don_gia,So_luong,Tien))
 NHOM_TIVI(Ma_so,Ten)
 NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau),
-  *Nhom_Tivi(Ma_so,Ten))
+	*Nhom_Tivi(Ma_so,Ten))
 
 Cách 3:
 TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten),
