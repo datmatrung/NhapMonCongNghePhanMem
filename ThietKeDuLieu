@@ -1,4 +1,18 @@
-Hệ Thống Bảng Dữ Liệu:
+Ngữ cảnh:
+Cửa hàng Tivi đang kinh doanh bán Tivi với các thông tin cần quản lý
+Giả sử chỉ bao gồm: Tên, Nhóm Tivi, Mã số, Đơn giá Bán, Hình.
+Cửa hàng hiện đang bán 4 Nhóm Tivi Sony, LG, Samsung, Khác.
+Cửa hàng hiện có 2 Nhân viên: NV 1 phụ trách bán 2 Nhóm Tivi: Sony, LG 
+NV 2 phụ trách bán 2 Nhóm Tivi: Samsung, Khác
+
+Yêu cầu Chức năng:
+Khách tham quan: Tra cứu Tivi - Thông tin cần xem
+(Tên, Hình, Tên Nhóm Tivi, Mã số, Đơn giá Bán, Trạng thái còn hàng )
+Nhân viên: Tra cứu Tivi - Thông tin cần xem 
+(Tên, Hình, Tên Nhóm Tivi, Mã số, Đơn giá Bán, Số lượng Tồn, Doanh thu Ngày hiện hành)
+Bán Tivi theo Phiếu Bán: Ngày, Tivi, Đơn giá Bán, Số lượng, Tiền
+
+Xác định các thực thể:
 TIVI
 NHOM_TIVI
 NHAN_VIEN
@@ -6,7 +20,7 @@ BAN_HANG
 NHAP_HANG
 PHAN_CONG
 
-Cách 0:
+Cách 1:
 TIVI(Ma_so,Ten,Don_gia_Ban,MNTV)
 NHOM_TIVI(Ma_so,Ten)
 NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau)
@@ -14,7 +28,7 @@ BAN_HANG(Ma_so,Ngay,MTV,Don_gia,So_luong,Tien,)
 NHAP_HANG(Ma_so,Ngay,MTV,Don_gia,So_luong,Tien)
 PHAN_CONG(Ma_so,MNV,MNTV)
 
-Cách 1:
+Cách 2:
 TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten))
 NHOM_TIVI(Ma_so,Ten)
 NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau)
@@ -22,7 +36,7 @@ BAN_HANG(Ma_so,Ngay,Tivi(Ma_so,Ten),Don_gia,So_luong,Tien)
 NHAP_HANG(Ma_so,Ngay,Tivi(Ma_so,Ten),Don_gia,So_luong,Tien)
 PHAN_CONG(Ma_so,Nhan_vien(Ma_so,Ten),Nhom_Tivi(Ma_so,Ten))
 
-Cách 2:
+Cách 3:
 TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten),
 	*Ban_hang(Ngay,Don_gia,So_luong,Tien),
 	*Nhap_hang(Ngay,Don_gia,So_luong,Tien))
@@ -30,7 +44,7 @@ NHOM_TIVI(Ma_so,Ten)
 NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau),
 	*Nhom_Tivi(Ma_so,Ten))
 
-Cách 3:
+Cách 4:
 TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten),
 	*Ban_hang(Ngay,Don_gia,So_luong,Tien),
 	*Nhap_hang(Ngay,Don_gia,So_luong,Tien))
