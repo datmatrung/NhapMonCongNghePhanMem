@@ -21,12 +21,12 @@ PHIEU_BAN
 PHAN_CONG
 
 Cách 1: Thêm thuộc tính vào thực thể
-TIVI(Ma_so,Ten,Don_gia_Ban,MNTV)
+TIVI(Ma_so,Ten,Don_gia_Ban,Ma_nhom_TV)
 NHOM_TIVI(Ma_so,Ten)
 NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau)
-PHIEU_NHAP(Ma_so,Ngay,MTV,Don_gia,So_luong,Tien,)
-PHIEU_BAN(Ma_so,Ngay,MTV,Don_gia,So_luong,Tien)
-PHAN_CONG(Ma_so,MNV,MNTV)
+PHIEU_NHAP(Ma_so,Ngay,Ma_TV,Don_gia,So_luong,Tien,)
+PHIEU_BAN(Ma_so,Ngay,Ma_TV,Don_gia,So_luong,Tien)
+PHAN_CONG(Ma_so,Ma_NV,Ma_nhom_TV)
 
 Cách 2: Nhúng thực thể có mối liên hệ vào thực thể chính
 TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten))
