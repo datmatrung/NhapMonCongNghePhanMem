@@ -41,8 +41,7 @@ TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten),
 	*Phieu_nhap(Ngay,Don_gia,So_luong,Tien),
 	*Phieu_ban(Ngay,Don_gia,So_luong,Tien))
 NHOM_TIVI(Ma_so,Ten)
-NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau),
-	*Nhom_Tivi(Ma_so,Ten))
+NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau),*Nhom_Tivi(Ma_so,Ten))
 
 Bước 5: Mở rộng hoạt động kinh doanh với nhiều chi nhánh
 TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten),
@@ -50,5 +49,4 @@ TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten),
 	*Phieu_ban(Ngay,Don_gia,So_luong,Tien))
 CHI_NHANH(Ma_so,Ten,
 	*Nhom_Tivi(Ma_so,Ten),
-	*Nhan_vien(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau),
-		*Nhom_Tivi(Ma_so,Ten)))
+	*Nhan_vien(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau),*Nhom_Tivi(Ma_so,Ten)))
