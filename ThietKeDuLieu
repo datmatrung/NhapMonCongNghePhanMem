@@ -12,7 +12,7 @@ Nhân viên: Tra cứu Tivi - Thông tin cần xem
 (Tên, Hình, Tên Nhóm Tivi, Mã số, Đơn giá Bán, Số lượng Tồn, Doanh thu Ngày hiện hành)
 Bán Tivi theo Phiếu Bán: Ngày, Tivi, Đơn giá Bán, Số lượng, Tiền
 
-Bước 0: Xác định các thực thể
+Bước 1: Xác định các thực thể
 TIVI
 NHOM_TIVI
 NHAN_VIEN
@@ -20,7 +20,7 @@ PHIEU_NHAP
 PHIEU_BAN
 PHAN_CONG
 
-Bước 1: Thêm thuộc tính vào thực thể
+Bước 2: Thêm thuộc tính vào thực thể
 TIVI(Ma_so,Ten,Don_gia_Ban,Ma_nhom_TV)
 NHOM_TIVI(Ma_so,Ten)
 NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau)
@@ -28,7 +28,7 @@ PHIEU_NHAP(Ma_so,Ngay,Ma_TV,Don_gia,So_luong,Tien)
 PHIEU_BAN(Ma_so,Ngay,Ma_TV,Don_gia,So_luong,Tien)
 PHAN_CONG(Ma_so,Ma_NV,Ma_nhom_TV)
 
-Bước 2: Nhúng thực thể có mối liên hệ vào thực thể chính
+Bước 3: Nhúng thực thể có mối liên hệ vào thực thể chính
 TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten))
 NHOM_TIVI(Ma_so,Ten)
 NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau)
@@ -36,7 +36,7 @@ PHIEU_NHAP(Ma_so,Ngay,Tivi(Ma_so,Ten),Don_gia,So_luong,Tien)
 PHIEU_BAN(Ma_so,Ngay,Tivi(Ma_so,Ten),Don_gia,So_luong,Tien)
 PHAN_CONG(Ma_so,Nhan_vien(Ma_so,Ten),Nhom_Tivi(Ma_so,Ten))
 
-Bước 3: Loại bỏ thực thể hoạt động, đưa vào thực thể chính
+Bước 4: Loại bỏ thực thể hoạt động, đưa vào thực thể chính
 TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten),
 	*Phieu_nhap(Ngay,Don_gia,So_luong,Tien),
 	*Phieu_ban(Ngay,Don_gia,So_luong,Tien))
@@ -44,7 +44,7 @@ NHOM_TIVI(Ma_so,Ten)
 NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau),
 	*Nhom_Tivi(Ma_so,Ten))
 
-Bước 4: Mở rộng hoạt động kinh doanh với nhiều chi nhánh
+Bước 5: Mở rộng hoạt động kinh doanh với nhiều chi nhánh
 TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten),
 	*Phieu_nhap(Ngay,Don_gia,So_luong,Tien),
 	*Phieu_ban(Ngay,Don_gia,So_luong,Tien))
