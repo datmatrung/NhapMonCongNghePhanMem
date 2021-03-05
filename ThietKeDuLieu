@@ -28,7 +28,7 @@ PHIEU_NHAP(Ma_so,Ngay,Ma_TV,Don_gia,So_luong,Tien)
 PHIEU_BAN(Ma_so,Ngay,Ma_TV,Don_gia,So_luong,Tien)
 PHAN_CONG(Ma_so,Ma_NV,Ma_nhom_TV)
 
-Bước 3: Nhúng thực thể phụ vào thực thể chính
+Bước 3: Nhúng thực thể liên kết vào thực thể chính
 TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten))
 NHOM_TIVI(Ma_so,Ten)
 NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau)
