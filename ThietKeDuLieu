@@ -24,7 +24,7 @@ Bước 1: Thêm thuộc tính vào thực thể
 TIVI(Ma_so,Ten,Don_gia_Ban,Ma_nhom_TV)
 NHOM_TIVI(Ma_so,Ten)
 NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau)
-PHIEU_NHAP(Ma_so,Ngay,Ma_TV,Don_gia,So_luong,Tien,)
+PHIEU_NHAP(Ma_so,Ngay,Ma_TV,Don_gia,So_luong,Tien)
 PHIEU_BAN(Ma_so,Ngay,Ma_TV,Don_gia,So_luong,Tien)
 PHAN_CONG(Ma_so,Ma_NV,Ma_nhom_TV)
 
