@@ -6,11 +6,11 @@ Cửa hàng hiện có 2 Nhân viên: NV 1 phụ trách bán 2 Nhóm Tivi: Sony,
 NV 2 phụ trách bán 2 Nhóm Tivi: Samsung, Khác
 
 Yêu cầu Chức năng:
-Khách tham quan: Tra cứu Tivi - Thông tin cần xem
+* Khách tham quan: Tra cứu Tivi - Thông tin cần xem
 (Tên, Hình, Tên Nhóm Tivi, Mã số, Đơn giá Bán, Trạng thái còn hàng )
-Nhân viên: Tra cứu Tivi - Thông tin cần xem 
+* Nhân viên: - Tra cứu Tivi - Thông tin cần xem 
 (Tên, Hình, Tên Nhóm Tivi, Mã số, Đơn giá Bán, Số lượng Tồn, Doanh thu Ngày hiện hành)
-Bán Tivi theo Phiếu Bán: Ngày, Tivi, Đơn giá Bán, Số lượng, Tiền
+- Bán Tivi theo Phiếu Bán: Ngày, Tivi, Đơn giá Bán, Số lượng, Tiền
 
 Bước 1: Xác định các thực thể
 TIVI
