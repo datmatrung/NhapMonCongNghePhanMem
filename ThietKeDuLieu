@@ -16,39 +16,39 @@ Xác định các thực thể:
 TIVI
 NHOM_TIVI
 NHAN_VIEN
-BAN_HANG
-NHAP_HANG
+PHIEU_NHAP
+PHIEU_BAN
 PHAN_CONG
 
-Cách 1:
+Cách 1: Thêm thuộc tính vào thực thể
 TIVI(Ma_so,Ten,Don_gia_Ban,MNTV)
 NHOM_TIVI(Ma_so,Ten)
 NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau)
-BAN_HANG(Ma_so,Ngay,MTV,Don_gia,So_luong,Tien,)
-NHAP_HANG(Ma_so,Ngay,MTV,Don_gia,So_luong,Tien)
+PHIEU_NHAP(Ma_so,Ngay,MTV,Don_gia,So_luong,Tien,)
+PHIEU_BAN(Ma_so,Ngay,MTV,Don_gia,So_luong,Tien)
 PHAN_CONG(Ma_so,MNV,MNTV)
 
-Cách 2:
+Cách 2: Nhúng thực thể có mối liên hệ vào thực thể chính
 TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten))
 NHOM_TIVI(Ma_so,Ten)
 NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau)
-BAN_HANG(Ma_so,Ngay,Tivi(Ma_so,Ten),Don_gia,So_luong,Tien)
-NHAP_HANG(Ma_so,Ngay,Tivi(Ma_so,Ten),Don_gia,So_luong,Tien)
+PHIEU_NHAP(Ma_so,Ngay,Tivi(Ma_so,Ten),Don_gia,So_luong,Tien)
+PHIEU_BAN(Ma_so,Ngay,Tivi(Ma_so,Ten),Don_gia,So_luong,Tien)
 PHAN_CONG(Ma_so,Nhan_vien(Ma_so,Ten),Nhom_Tivi(Ma_so,Ten))
 
-Cách 3:
+Cách 3: Loại bỏ thực thể hoạt động, đưa vào thực thể chính
 TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten),
-	*Ban_hang(Ngay,Don_gia,So_luong,Tien),
-	*Nhap_hang(Ngay,Don_gia,So_luong,Tien))
+	*Phieu_nhap(Ngay,Don_gia,So_luong,Tien),
+	*Phieu_ban(Ngay,Don_gia,So_luong,Tien))
 NHOM_TIVI(Ma_so,Ten)
 NHAN_VIEN(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau),
 	*Nhom_Tivi(Ma_so,Ten))
 
-Cách 4:
+Cách 4: Mở rộng hoạt động kinh doanh với nhiều chi nhánh
 TIVI(Ma_so,Ten,Don_gia_Ban,Nhom_Tivi(Ma_so,Ten),
-	*Ban_hang(Ngay,Don_gia,So_luong,Tien),
-	*Nhap_hang(Ngay,Don_gia,So_luong,Tien))
-CONGTY(Ma_so,Ten,
+	*Phieu_nhap(Ngay,Don_gia,So_luong,Tien),
+	*Phieu_ban(Ngay,Don_gia,So_luong,Tien))
+CHI_NHANH(Ma_so,Ten,
 	*Nhom_Tivi(Ma_so,Ten),
 	*Nhan_vien(Ma_so,Ho_ten,Ten_Dang_nhap,Mat_khau),
 		*Nhom_Tivi(Ma_so,Ten)))
